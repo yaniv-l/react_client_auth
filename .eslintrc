@@ -1,0 +1,9 @@
+{
+  "extends": "rallycoding",
+  "rules": {
+        // customize rules
+        "max-len": ["error", 80, { "comments": 100, "ignoreTrailingComments": true }],
+        "arrow-body-style": ["error", "always"],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": true, "peerDependencies": true}]
+      }
+}
