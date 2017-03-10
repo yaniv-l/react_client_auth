@@ -1,5 +1,5 @@
 # react client auth
-This is a playground project implemeting and showcasing a client side ract app that uses JWT for authentication.
+This is a playground project implementing and showcasing a client side react app using JWT for authentication.
 
 This app is based on the Stephen Grider react-redux course.
 Interested in learning [Redux](https://www.udemy.com/react-redux/)?

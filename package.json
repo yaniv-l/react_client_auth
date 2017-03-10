@@ -12,10 +12,11 @@
   "author": "",
   "license": "ISC",
   "eslintConfig": {
-        "env": {
-            "browser": true,
-            "mocha": true
-        }},
+    "env": {
+      "browser": true,
+      "mocha": true
+    }
+  },
   "devDependencies": {
     "jquery": "^2.2.1",
     "babel-core": "^6.2.1",
@@ -38,6 +39,7 @@
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
-    "redux": "^3.0.4"
+    "redux": "^3.0.4",
+    "redux-form": "^6.5.0"
   }
 }
