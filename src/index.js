@@ -9,6 +9,8 @@ import App from './components/app';
 import Signin from './components/auth/signin';
 import reducers from './reducers';
 
+// Adding reduxThrunk as a middleware - will provide more granular approach to
+// handle the dispatch of actions to reducers
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 
 ReactDOM.render(
