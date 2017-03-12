@@ -33,13 +33,16 @@
     "eslint-config-rallycoding": "^3.1.0"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "babel-preset-stage-1": "^6.1.18",
+    "cors": "^2.8.1",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
     "redux": "^3.0.4",
-    "redux-form": "^5.2.0"
+    "redux-form": "^5.2.0",
+    "redux-thunk": "^2.2.0"
   }
 }
