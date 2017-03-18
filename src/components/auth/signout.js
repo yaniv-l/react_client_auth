@@ -4,7 +4,8 @@ import * as actions from '../../actions';
 
 class Signout extends Component {
   componentWillMount() {
-    console.log('signing out user');
+    //console.log('signing out user');  // For Dubug
+    // Calling signout action creator to signuser out
     this.props.signOutUser();
   }
 
