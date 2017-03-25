@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-export default function(ComposedComponent) {
+// A Higher Ordered Component (hoc) to protect authenticated required components
+export default function (ComposedComponent) {
   class Authentication extends Component {
     static contextTypes = {
       router: React.PropTypes.object
@@ -20,12 +21,12 @@ export default function(ComposedComponent) {
     }
 
     render() {
-      return <ComposedComponent {...this.props} />
+      return <ComposedComponent {...this.props} />;
     }
   }
 
   function mapStateToProps(state) {
-    return { authenticated: state.authenticated };
+    return { authenticated: state.auth.authenticated };
   }
 
   return connect(mapStateToProps)(Authentication);
