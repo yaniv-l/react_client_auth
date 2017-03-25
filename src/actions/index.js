@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 
-import { AUTH_USER, UNAUTH_USER, AUTH_ERROR } from './types';
+import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, FETCH_MESSAGE } from './types';
 
 const ROOT_URL = 'http://localhost:3090';
 
@@ -79,4 +79,19 @@ export function authError(error) {
 export function signOutUser() {
   localStorage.removeItem('token');
   return { type: UNAUTH_USER };
+}
+
+export function fetchMessage() {
+  return function (dispatch) {
+    // Issue an ajax/promise request with the JWT token in the header so we can
+    // get protected API routes
+    axios.get(ROOT_URL, {
+      // We add our JWT token into the request header
+      headers: { authorization: localStorage.getItem('token') } })
+    .then(response => {
+      dispatch({
+        type: FETCH_MESSAGE,
+        payload: response.data.message
+      }); });
+    }
 }
