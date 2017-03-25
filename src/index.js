@@ -10,6 +10,7 @@ import Signin from './components/auth/signin';
 import Signout from './components/auth/signout';
 import Signup from './components/auth/signup';
 import Feature from './components/feature';
+import Welcome from './components/welcome';
 import RequireAuth from './components/auth/require_auth';
 import reducers from './reducers';
 
@@ -21,6 +22,7 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <Router history={browserHistory} >
       <Route path='/' components={App}>
+        <IndexRoute components={Welcome} />
         <Route path='signin' components={Signin} />
         <Route path='signout' components={Signout} />
         <Route path='signup' components={Signup} />
