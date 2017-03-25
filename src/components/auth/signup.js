@@ -27,7 +27,7 @@ class Signup extends Component {
     return (
       <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
         <fieldset className='form-group'>
-          <label>Email:</label>
+          <label htmlFor='email'>Email:</label>
           <input className='form-control' {...email} />
           {email.touched &&
             email.error &&
@@ -35,7 +35,7 @@ class Signup extends Component {
           }
         </fieldset>
         <fieldset className='form-group'>
-          <label>Password:</label>
+          <label htmlFor='password'>Password:</label>
           <input type='password' className='form-control' {...password} />
           {password.touched &&
             password.error &&
@@ -43,8 +43,10 @@ class Signup extends Component {
           }
         </fieldset>
         <fieldset className='form-group'>
-          <label>Confirm Password:</label>
-          <input type='password' className='form-control' {...passwordConfirmation} />
+          <label htmlFor='passwordConfirmation'>Confirm Password:</label>
+          <input
+            type='password' className='form-control'
+            {...passwordConfirmation} />
           {passwordConfirmation.touched &&
             passwordConfirmation.error &&
             <div className='error'>{passwordConfirmation.error}</div>
@@ -68,8 +70,8 @@ function validate(formProps) {
   if (!formProps.passwordConfirmation) {
     errors.passwordConfirmation = 'Please enter Password Confirmation';
   }
-  if (formProps.password != formProps.passwordConfirmation) {
-    errors.password = 'Password must match'
+  if (formProps.password !== formProps.passwordConfirmation) {
+    errors.password = 'Password must match';
   }
 
   return errors;
@@ -79,7 +81,7 @@ function mapStateToProps(state) {
     errorMessage: state.auth.error
   };
 }
-export default reduxForm ({
+export default reduxForm({
   form: 'signup',
   fields: ['email', 'password', 'passwordConfirmation'],
   validate: validate

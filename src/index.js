@@ -9,6 +9,8 @@ import App from './components/app';
 import Signin from './components/auth/signin';
 import Signout from './components/auth/signout';
 import Signup from './components/auth/signup';
+import Feature from './components/feature';
+import RequireAuth from './components/auth/require_auth';
 import reducers from './reducers';
 
 // Adding reduxThrunk as a middleware - will provide more granular approach to
@@ -22,6 +24,7 @@ ReactDOM.render(
         <Route path='signin' components={Signin} />
         <Route path='signout' components={Signout} />
         <Route path='signup' components={Signup} />
+        <Route path='feature' components={RequireAuth(Feature)} />
       </Route>
     </Router>
   </Provider>
